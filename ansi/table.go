@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"fmt"
 	"io"
+	"strings"
 
 	"charm.land/lipgloss/v2"
 	"charm.land/lipgloss/v2/table"
@@ -48,8 +49,8 @@ func (e *TableElement) Render(w io.Writer, ctx RenderContext) error {
 		margin = *rules.Margin
 	}
 
-	iw := NewIndentWriter(w, int(indentation+margin), func(_ io.Writer) { //nolint:gosec
-		_, _ = renderText(w, bs.Current().Style.StylePrimitive, " ")
+	iw := NewIndentWriterBatch(w, int(indentation+margin), func(_ io.Writer, count int) { //nolint:gosec
+		_, _ = renderText(w, bs.Current().Style.StylePrimitive, strings.Repeat(" ", count))
 	})
 	defer iw.Close() //nolint:errcheck
 

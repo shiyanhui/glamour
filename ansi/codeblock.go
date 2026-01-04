@@ -3,6 +3,7 @@ package ansi
 import (
 	"fmt"
 	"io"
+	"strings"
 	"sync"
 
 	"github.com/alecthomas/chroma/v2"
@@ -125,8 +126,8 @@ func (e *CodeBlockElement) Render(w io.Writer, ctx RenderContext) error {
 		mutex.Unlock()
 	}
 
-	iw := NewIndentWriter(w, int(indentation+margin), func(_ io.Writer) { //nolint:gosec
-		_, _ = renderText(w, bs.Current().Style.StylePrimitive, " ")
+	iw := NewIndentWriterBatch(w, int(indentation+margin), func(_ io.Writer, count int) { //nolint:gosec
+		_, _ = renderText(w, bs.Current().Style.StylePrimitive, strings.Repeat(" ", count))
 	})
 	defer iw.Close() //nolint:errcheck
 

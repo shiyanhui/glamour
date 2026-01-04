@@ -7,7 +7,7 @@ toolchain go1.24.4
 require (
 	charm.land/lipgloss/v2 v2.0.0-beta.3.0.20251106193318-19329a3e8410
 	github.com/alecthomas/chroma/v2 v2.14.0
-	github.com/charmbracelet/x/ansi v0.11.0
+	github.com/charmbracelet/x/ansi v0.11.3
 	github.com/charmbracelet/x/exp/golden v0.0.0-20250806222409-83e3a29d542f
 	github.com/charmbracelet/x/exp/slice v0.0.0-20250327172914-2fdc97757edf
 	github.com/microcosm-cc/bluemonday v1.0.27
@@ -24,7 +24,7 @@ require (
 	github.com/charmbracelet/x/term v0.2.2 // indirect
 	github.com/charmbracelet/x/termios v0.1.1 // indirect
 	github.com/charmbracelet/x/windows v0.2.2 // indirect
-	github.com/clipperhouse/displaywidth v0.4.1 // indirect
+	github.com/clipperhouse/displaywidth v0.6.1 // indirect
 	github.com/clipperhouse/stringish v0.1.1 // indirect
 	github.com/clipperhouse/uax29/v2 v2.3.0 // indirect
 	github.com/dlclark/regexp2 v1.11.0 // indirect
